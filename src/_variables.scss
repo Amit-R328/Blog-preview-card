@@ -1,0 +1,31 @@
+@use "sass:map";
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('./assets/Figtree-VariableFont_wght.ttf');
+}
+
+$font: 'Figtree';
+
+$Yellow: #F4D04E;
+$Gray-500: #6b6b6b;
+$Dark-950: #111;
+$White: #fff;
+
+$breakpoints-map: (
+  phone: 375px,
+  desktop: 1400px
+);
+
+@mixin respond-to($breakpoints...) {
+  @each $breakpoint in $breakpoints {
+    $size: map.get($breakpoints-map, $breakpoint);
+    @if $size {
+      @media (max-width: $size) {
+        @content;
+      }
+    } @else {
+      @warn "Breakpoint #{$breakpoint} not found in \$breakpoints-map.";
+    }
+  }
+}

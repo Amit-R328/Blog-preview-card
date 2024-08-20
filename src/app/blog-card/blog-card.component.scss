@@ -1,0 +1,110 @@
+@import "../../variables.scss";
+
+.blog-card {
+  width: 384px;
+  height: 522px;
+  background-color: $White;
+  border-radius: 20px;
+  box-shadow: 8px 8px 0px 0px #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  transition: 0.5s;
+  gap: 24px;
+  font-family: $font;
+
+  @include respond-to(phone) {
+    width: 327px;
+    height: 501px;
+    padding: 16px;
+  }
+
+  .blog-card__image {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+    }
+  }
+
+  .blog-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .tag {
+      background-color: $Yellow;
+      width: 82px;
+      height: 29px;
+      border-radius: 4px;
+      color: $Dark-950;
+      line-height: 150%;
+      font-size: 0.875em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+
+      @include respond-to(phone) {
+        width: 73px;
+        height: 26px;
+        font-size: 0.75em;
+      }
+    }
+
+    .date {
+        color: $Dark-950;
+        font-size: 0.875em;
+        font-weight: 500;
+        line-height: 150%;   
+        
+        @include respond-to(phone) {
+            font-size: 0.75em;
+        }
+    }
+
+    h1 {
+        color: $Dark-950;
+        font-size: 1.5em;
+        font-weight: 800;
+
+        @include respond-to(phone) {
+            font-size: 1.25em;
+        }
+    }
+
+    .content {
+        color: $Gray-500;
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 150%;
+        
+        @include respond-to(phone) {
+            font-size: 0.875em;
+        }
+    }
+
+    .author {
+        margin-top: 12px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        img {
+           width: 32px;
+           height: 32px; 
+        }
+
+        p {
+            color: $Dark-950;
+            font-size: 0.875em;
+            font-weight: 800;
+            line-height: 150%;
+        }
+    }
+  }
+}
